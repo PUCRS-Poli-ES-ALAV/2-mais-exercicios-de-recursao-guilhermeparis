@@ -30,11 +30,34 @@ Extra: terminados estes exercícios, modele e implemente (se ainda não concluiu) 
 		else
 			return n * fatorial(n-1);
 	}
+	/* 2. Modele e implemente um método recursivo que calcule o somatório de um número n passado como parâmetro até 0 (inclusive para números negativos).
+	Modelagem:
+	int somatorio (int n)
+	Exs: n = -1, n = 0, n = 1, n = 10
+	Situações de Erro: Não há
+	Situação de parada (base da recursão) n == 0 -> 0
+	Recursão:  
+	n == 5 -> 5 + somatorio(4)
+	n == 1 -> 1 + somatorio(0)
+	n == -3 -> -3 + somatório de 
+	
+	 */
+	
+	public int somatorio (int n){
+		//Situações de erro: não há
+		//Base da recursão:
+		if (n==0) 
+			return 0;
+		else if (n < 0)
+			return n + somatorio(n+1);
+		else
+			return n + somatorio(n-1);
+	}
 }
+
 	
 
-// Modele e implemente um método recursivo que calcule o somatório de um número n (passado como parâmetro) até 0.
-//
+
 //	Modele e implemente um método recursivo que calcule o n-ésimo número da sequência de fibonacci.
 //
 //	Modele e implemente um método recursivo que calcule o somatório dos números inteiros entre os números k e j, passados como parâmetro.
