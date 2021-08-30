@@ -66,6 +66,7 @@ Extra: terminados estes exercícios, modele e implemente (se ainda não concluiu) 
 	n == 5 -> fibonacci(4) + fibonacci (3)
 	n == 3 -> fibonacci(3) + fibonacci (2)
 	*/
+	
 	public int fibonacci (int n){
 		//Situações de erro:
 		if (n<0)
@@ -76,9 +77,33 @@ Extra: terminados estes exercícios, modele e implemente (se ainda não concluiu) 
 		else
 			return fibonacci(n-2) + fibonacci(n-1);
 	}
-		
+	
+
+	/*. 4 Modele e implemente um método recursivo que calcule o somatório dos números inteiros entre os números k e j, passados como parâmetro.
+	
+	Modelagem
+	int somatorio(int k, int j)
+	Exs: n = -4, n = 0, n = 1, n = 5
+	Situações de Erro: Não há
+	Situação de parada (base da recursão): k == j
+	Recursão:  
+	k == 2 e j == 6 -> 2 + somatorio(3)
+	k == 6 e j == 2 -> 6 + somatorio(5)
+	k == -4 j == -7 -> -4 + 
+	*/
+	
+	public int somatorio(int k, int j) {
+		//Condição de parada
+		if (k==j)
+			return k;
+		else if (k < j)
+			return k + somatorio(k+1, j);
+		else
+			return j + somatorio(k, j+1);
+	}
+	
 }
-//	Modele e implemente um método recursivo que calcule o somatório dos números inteiros entre os números k e j, passados como parâmetro.
+//	
 //
 //	Modele e implemente um método recursivo que recebe um String em retorna true se este String for um palíndrome, false caso contrário.
 //
