@@ -4,9 +4,8 @@ Modele as recursões, e depois implemente cada um dos algorítmos modelados.
 Faça uma classe contendo os métodos implementados.
 Coloque a modelagem como comentário antes de cada método.
 Extra: terminados estes exercícios, modele e implemente (se ainda não concluiu) os exercícios de re-aquecimento.
-*/
 
-	/*1. Modele e implemente um método recursivo que calcule o fatorial de um número n passado como parâmetro.
+	1. Modele e implemente um método recursivo que calcule o fatorial de um número n passado como parâmetro.
 	
 	Modelagem:
 	int fatorial (int n)
@@ -30,7 +29,9 @@ Extra: terminados estes exercícios, modele e implemente (se ainda não concluiu) 
 		else
 			return n * fatorial(n-1);
 	}
+	
 	/* 2. Modele e implemente um método recursivo que calcule o somatório de um número n passado como parâmetro até 0 (inclusive para números negativos).
+	
 	Modelagem:
 	int somatorio (int n)
 	Exs: n = -1, n = 0, n = 1, n = 10
@@ -39,9 +40,8 @@ Extra: terminados estes exercícios, modele e implemente (se ainda não concluiu) 
 	Recursão:  
 	n == 5 -> 5 + somatorio(4)
 	n == 1 -> 1 + somatorio(0)
-	n == -3 -> -3 + somatório de 
-	
-	 */
+	n == -3 -> -3 + somatório(-2)
+	*/
 	
 	public int somatorio (int n){
 		//Situações de erro: não há
@@ -53,13 +53,31 @@ Extra: terminados estes exercícios, modele e implemente (se ainda não concluiu) 
 		else
 			return n + somatorio(n-1);
 	}
-}
-
 	
-
-
-//	Modele e implemente um método recursivo que calcule o n-ésimo número da sequência de fibonacci.
-//
+	/* 3. Modele e implemente um método recursivo que calcule o n-ésimo número da sequência de fibonacci.
+	
+	Modelagem:
+	int fibonacci(int n)
+	Exs: n = -1, n = 0, n = 1, n = 5
+	Situações de Erro: n <= 0 -> Exception
+	Situação de parada n == 2 -> 1
+	(base da recursão) n == 1 -> 1
+	Recursão:  
+	n == 5 -> fibonacci(4) + fibonacci (3)
+	n == 3 -> fibonacci(3) + fibonacci (2)
+	*/
+	public int fibonacci (int n){
+		//Situações de erro:
+		if (n<0)
+			throw new IllegalArgumentException("Error: negative number");
+		//Base da recursão:
+		if (n==2 || n==1) 
+			return 1;
+		else
+			return fibonacci(n-2) + fibonacci(n-1);
+	}
+		
+}
 //	Modele e implemente um método recursivo que calcule o somatório dos números inteiros entre os números k e j, passados como parâmetro.
 //
 //	Modele e implemente um método recursivo que recebe um String em retorna true se este String for um palíndrome, false caso contrário.
