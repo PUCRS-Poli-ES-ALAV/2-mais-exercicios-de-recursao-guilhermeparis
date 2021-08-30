@@ -20,14 +20,16 @@ public class App {
 //		System.out.println(m.somatorio(-5, -2));
 		
 		//Exercicio 5
-		String S = "";
-		System.out.println(m.isPal(S));
-		System.out.println(m.isPal("arara"));
-		System.out.println(m.isPal("batata"));
-		S = null;
-		System.out.println(m.isPal(S));
+//		String S = "";
+//		System.out.println(m.isPal(S));
+//		System.out.println(m.isPal("arara"));
+//		System.out.println(m.isPal("batata"));
+//		S = null;
+//		System.out.println(m.isPal(S));
 		
-
+		//Exercicio 6
+		System.out.println(m.convBase2(25));
+		
 	}
 }
 

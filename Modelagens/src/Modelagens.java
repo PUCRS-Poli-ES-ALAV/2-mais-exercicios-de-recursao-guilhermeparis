@@ -132,10 +132,37 @@ Extra: terminados estes exercícios, modele e implemente (se ainda não concluiu) 
 		//Fim da recursão e retorno do método:
 		return res;
 	}
+	
+	/* 6. Modele e implemente um método recursivo que recebe um inteiro zero ou positivo e retorna um String com o número em binário.	
+	Modelagem
+	String convBase2(int n)
+	Exs: n = -5, n = 0, n = 1, n = 4
+	Situações de Erro: n < 0
+	Situação de parada (base da recursão): n == 0 -> 0
+	Recursão:  
+	n == 25 -> convBase(n % 2)
+	*/
+	
+	public String convBase2(int n){
+		String S = "";
+		//Situação de Erro
+		if (n < 0)
+			throw new IllegalArgumentException("Error: negative number");
+		//Base da recursão
+		if (n == 0)
+			S = "0";
+		if (n == 1)
+			S = "1";
+		else
+			S = convBase2(n / 2) + n % 2;
+		return S;
+			
+	}
+	
 }
 
-// Modele e implemente um método recursivo que recebe um inteiro zero ou positivo e retorna um String com o número em binário.
-//
+
+
 // Modele e implemente um método recursivo que calcule o somatório dos números contidos em um ArrayList de inteiros, passado como parâmetro.
 //
 //	Modele e implemente um método recursivo para encontrar o maior elemento de um ArrayList.
