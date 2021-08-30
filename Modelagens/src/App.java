@@ -14,12 +14,20 @@ public class App {
 //		System.out.println(i + ": " + m.fibonacci(i));
 
 		//Exercicio 4
-		System.out.println(m.somatorio(2, 5));
-		System.out.println(m.somatorio(5, 2));
-		System.out.println(m.somatorio(-2, -5));
-		System.out.println(m.somatorio(-5, -2));
+//		System.out.println(m.somatorio(2, 5));
+//		System.out.println(m.somatorio(5, 2));
+//		System.out.println(m.somatorio(-2, -5));
+//		System.out.println(m.somatorio(-5, -2));
 		
+		//Exercicio 5
+		String S = "";
+		System.out.println(m.isPal(S));
+		System.out.println(m.isPal("arara"));
+		System.out.println(m.isPal("batata"));
+		S = null;
+		System.out.println(m.isPal(S));
 		
+
 	}
 }
 

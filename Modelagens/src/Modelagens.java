@@ -89,7 +89,8 @@ Extra: terminados estes exercícios, modele e implemente (se ainda não concluiu) 
 	Recursão:  
 	k == 2 e j == 6 -> 2 + somatorio(3)
 	k == 6 e j == 2 -> 6 + somatorio(5)
-	k == -4 j == -7 -> -4 + 
+	k == -4 e j == -7 -> -4 + somatorio(-5)
+	k == -7 e j == -4 -> -7 + somatorio(-6)
 	*/
 	
 	public int somatorio(int k, int j) {
@@ -102,16 +103,40 @@ Extra: terminados estes exercícios, modele e implemente (se ainda não concluiu) 
 			return j + somatorio(k, j+1);
 	}
 	
+	/* 5.Modele e implemente um método recursivo que recebe um String em retorna true se este String for um palíndrome, false caso contrário.
+	 
+	Modelagem
+	boolean isPal(String s)
+	Exs: S == vazio, S == null, S == arara, S = batata
+	Situações de Erro: String nula
+	Situação de parada (base da recursão): String na posição 0 == String na posição length-1
+	Recursão:  
+	S == arara -> a == a
+	S == rar -> r == r
+	S == a -> a == a
+	*/
+	
+	public boolean isPal(String s) {
+		boolean res;
+		//Situação de erro
+		if (s == null)
+			throw new IllegalArgumentException("Error: Null string");
+		//Bases da recursão
+		else if ((s.length() == 0) || (s.length() == 1))
+			res = true;
+		else if (s.charAt(0) != s.charAt(s.length()-1))
+			res = false;
+		//Recursão:
+		else
+			res = isPal(s.substring(1, s.length()-1));
+		//Fim da recursão e retorno do método:
+		return res;
+	}
 }
-//	
+
+// Modele e implemente um método recursivo que recebe um inteiro zero ou positivo e retorna um String com o número em binário.
 //
-//	Modele e implemente um método recursivo que recebe um String em retorna true se este String for um palíndrome, false caso contrário.
-//
-//	     boolean isPal(String s) 
-//	Modele e implemente um método recursivo que recebe um inteiro zero ou positivo e retorna um String com o número em binário.
-//
-//	     String convBase2(int n) 
-//	Modele e implemente um método recursivo que calcule o somatório dos números contidos em um ArrayList de inteiros, passado como parâmetro.
+// Modele e implemente um método recursivo que calcule o somatório dos números contidos em um ArrayList de inteiros, passado como parâmetro.
 //
 //	Modele e implemente um método recursivo para encontrar o maior elemento de um ArrayList.
 //
